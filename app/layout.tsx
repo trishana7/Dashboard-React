@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Versal",
+  title: "Vercel",
   description: "Sales record application",
 };
 
