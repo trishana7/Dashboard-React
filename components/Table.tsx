@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import Icon from "./Icon"; // Adjust based on your file structure
+import Icon from "./Icon";
 import { getDateTime } from "@/utils/dateTimeUtils";
 
 export interface TableHeader {
@@ -63,7 +63,7 @@ const Table: React.FC<TableProps> = ({
               {loadingRows.map((item) => (
                 <tr
                   key={item.id}
-                  className="bg-white border-b border-gray-500 animate-pulse"
+                  className="bg-white border-b border-gray-200 animate-pulse"
                 >
                   {headers.map((header) => (
                     <td key={header.key} className="p-3.5">
@@ -75,7 +75,7 @@ const Table: React.FC<TableProps> = ({
             </>
           ) : records.length ? (
             records.map((item, index) => (
-              <tr key={index} className={`hover:bg-gray-2 h-12`}>
+              <tr key={index} className={`hover:bg-gray-50 h-12`}>
                 {headers.map((header) => (
                   <td key={header.key} className={`px-5 overflow-hidden`}>
                     <div className="text-[15px] text-gray-600">
