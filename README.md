@@ -34,6 +34,6 @@ This command will compile the project and start the development server. You shou
 
 You can access the live version of the deployed system through this link:
 
-[Deployed System Link](https://dashboard-react-2uw6ah6u1-trishanas-projects.vercel.app/)
+[Deployed System Link](https://dashboard-react-kappa-seven.vercel.app/)
 
 This link will take you to the actual system where you can interact with its features and functionalities.
