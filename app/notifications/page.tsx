@@ -1,5 +1,5 @@
 "use client";
 
-export default function Dashboard() {
-  return <>sales</>;
+export default function Notification() {
+  return <>Notification</>;
 }
