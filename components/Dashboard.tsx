@@ -39,8 +39,8 @@ const Profile: React.FC = () => {
       {/* Main Flex Wrapper */}
       <div className="flex flex-wrap lg:flex-nowrap w-full gap-4">
         {/* Total Sales & Costs */}
-        <div className="w-full lg:w-[35%] bg-white rounded-lg h-[199px] py-5 flex justify-between items-center px-5 2xl:pl-20">
-          <div className="flex items-center mr-5">
+        <div className="w-full lg:w-[35%] bg-white rounded-lg h-[199px] py-5 flex justify-around items-center px-5 2xl:pl-20">
+          <div className="flex items-center justify-center ">
             <Icon iconName="BusinessFinance" />
           </div>
           <div className="h-[139px] bg-gray-5 w-1"></div>
@@ -84,7 +84,10 @@ const Profile: React.FC = () => {
         {/* Country Statistics */}
         <div className="w-full lg:w-[40%] bg-white rounded-lg h-[199px] p-5">
           {countryStatistics.map((countryStatistic, index) => (
-            <div key={index} className="flex items-center justify-center mb-2">
+            <div
+              key={index}
+              className="flex items-center justify-center mb-2 gap-5"
+            >
               <div className="flex">
                 <div className="ml-2 mr-4">
                   <p className="text-lg font-semibold text-gray-3">
@@ -95,35 +98,37 @@ const Profile: React.FC = () => {
                   </p>
                 </div>
               </div>
-              <div className="mr-2 w-full bg-gray-200 max-w-sm mx-auto rounded-lg overflow-hidden border border-gray-300">
+              <div className="w-full bg-gray-200 max-w-sm mx-auto rounded-lg overflow-hidden border border-gray-300">
                 <div
-                  className="bg-blue-2 text-xs leading-none py-1 rounded-full"
+                  className="bg-blue-600 text-xs leading-none py-1 rounded-full"
                   style={{ width: countryStatistic.percentage }}
                 ></div>
               </div>
-              <div
-                className={
-                  countryStatistic.status === "loss" ? "rotate-180" : ""
-                }
-              >
-                <Icon
-                  iconName="Arrow"
-                  svgFill={
-                    countryStatistic.status === "profit"
-                      ? "stroke-green-600"
-                      : "stroke-red-500"
+              <div className="flex justify-center items-center gap-1">
+                <div
+                  className={
+                    countryStatistic.status === "loss" ? "rotate-180" : ""
                   }
-                />
+                >
+                  <Icon
+                    iconName="Arrow"
+                    svgFill={
+                      countryStatistic.status === "profit"
+                        ? "stroke-green-600"
+                        : "stroke-red-500"
+                    }
+                  />
+                </div>
+                <span
+                  className={`text-sm font-medium ${
+                    countryStatistic.status === "loss"
+                      ? "text-red-500"
+                      : "text-green-600"
+                  }`}
+                >
+                  {countryStatistic.percentage}
+                </span>
               </div>
-              <span
-                className={`text-sm font-medium mx-2 ${
-                  countryStatistic.status === "loss"
-                    ? "text-red-500"
-                    : "text-green-600"
-                }`}
-              >
-                {countryStatistic.percentage}
-              </span>
             </div>
           ))}
         </div>

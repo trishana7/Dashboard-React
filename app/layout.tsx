@@ -33,7 +33,7 @@ export default function RootLayout({
             <header className="flex justify-end px-8 p-4 lg:p-6 shadow bg-white mb-1 sticky top-0">
               <UserInfo />
             </header>
-            {children}
+            <div className="p-5">{children}</div>
           </div>
         </div>
       </body>
