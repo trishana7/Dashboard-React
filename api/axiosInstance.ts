@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { extractErrorMessage } from "@/utils/errorMessageUtils";
+import { showErrorModal } from "@/utils/sweetAlertModalUtils";
 import axios from "axios";
 
 const instance = axios.create({
@@ -23,6 +25,13 @@ instance.interceptors.response.use(
       if (!error.response) {
         return Promise.reject(error);
       }
+      const errorMessage = extractErrorMessage(error.response.data.message);
+      showErrorModal({
+        imageUrl: "/error.png",
+        errorTitle: "Application ran into an error",
+        errorMessage: errorMessage || "Something went wrong!",
+        customTitleClass: "custom-title",
+      });
     } catch ({ err }: any) {
       return Promise.reject(err);
     }
