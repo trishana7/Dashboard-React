@@ -9,7 +9,7 @@ interface CountryStatistic {
   status: "profit" | "loss";
 }
 
-const Profile: React.FC = () => {
+const NotificationLayout: React.FC = () => {
   const [countryStatistics] = useState<CountryStatistic[]>([
     {
       value: "30k",
@@ -139,4 +139,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default NotificationLayout;
