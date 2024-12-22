@@ -15,7 +15,7 @@ export default function Profile() {
               height={24}
             />
           </div>
-          <p className="font-bold text-3xl">Versal</p>
+          <p className="font-bold text-3xl">Vercel</p>
         </div>
 
         <ul className="text-gray-500 font-semibold flex flex-col gap-2">
